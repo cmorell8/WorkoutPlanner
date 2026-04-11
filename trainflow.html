@@ -26,12 +26,19 @@
     input[type=number]{-moz-appearance:textfield}
     input[type=number]::-webkit-outer-spin-button,input[type=number]::-webkit-inner-spin-button{-webkit-appearance:none;margin:0}
   </style>
+  <script src="config.js"></script>
 </head>
 <body><div id="root"></div>
 <script type="text/babel">
 const {useState,useEffect,useCallback,useMemo,useRef} = React;
 
-const ATHLETE_ID="i459250",API_KEY="fbfaxfky3o03as11afy65xxj",BASE_URL="https://app.intervals.icu/api/v1",AUTH="Basic "+btoa("API_KEY:"+API_KEY);
+const { 
+  ATHLETE_ID = "DEMO", 
+  API_KEY = "", 
+  BASE_URL = "https://app.intervals.icu/api/v1" 
+} = window.TF_CONFIG || {};
+
+const AUTH = "Basic " + btoa("API_KEY:" + API_KEY);
 
 const SPORTS={Ride:{emoji:"🚴",color:"#f97316",bg:"#fff7ed",label:"Cycling"},VirtualRide:{emoji:"🏠",color:"#f59e0b",bg:"#fffbeb",label:"Indoor Ride"},MountainBikeRide:{emoji:"🚵",color:"#ea580c",bg:"#fff7ed",label:"MTB"},Run:{emoji:"🏃",color:"#3b82f6",bg:"#eff6ff",label:"Running"},TrailRun:{emoji:"🏔️",color:"#7c3aed",bg:"#f5f3ff",label:"Trail Run"},Swim:{emoji:"🏊",color:"#06b6d4",bg:"#ecfeff",label:"Swimming"},OpenWaterSwim:{emoji:"🌊",color:"#0891b2",bg:"#ecfeff",label:"Open Water"},WeightTraining:{emoji:"🏋️",color:"#ec4899",bg:"#fdf2f8",label:"Gym"},Walk:{emoji:"🚶",color:"#65a30d",bg:"#f7fee7",label:"Walking"},Hike:{emoji:"🥾",color:"#10b981",bg:"#ecfdf5",label:"Hiking"},Yoga:{emoji:"🧘",color:"#a855f7",bg:"#faf5ff",label:"Yoga"},Rowing:{emoji:"🚣",color:"#0ea5e9",bg:"#f0f9ff",label:"Rowing"},Workout:{emoji:"💪",color:"#8b5cf6",bg:"#f5f3ff",label:"Workout"}};
 const getSport=t=>SPORTS[t]||{emoji:"⚡",color:"#6b7280",bg:"#f9fafb",label:t||"Activity"};

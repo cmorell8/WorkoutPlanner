@@ -2,6 +2,8 @@
 
 TrainFlow is a personal training planning application built as a single-file React/Tailwind prototype. It connects to [intervals.icu](https://intervals.icu) to manage workouts, training phases, and fitness tracking.
 
+**GitHub Repository:** [https://github.com/cmorell8/workoutPlanner](https://github.com/cmorell8/workoutPlanner)
+
 ## 🚀 Getting Started
 
 To run the application locally, you need to serve it via HTTP to avoid CORS issues with the intervals.icu API.
