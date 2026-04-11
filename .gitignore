@@ -1,0 +1,15 @@
+# IDE files
+.vscode/
+.idea/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Project specific
+*.log
+tmp/
+.gemini/
+.agents/
+.agent/
+brain/
