@@ -1,4 +1,4 @@
-const CACHE_NAME = 'trainflow-v1';
+const CACHE_NAME = 'trainflow-v2';
 const APP_SHELL = [
   './trainflow.html',
   './manifest.json',
